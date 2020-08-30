@@ -1,0 +1,60 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.btn{
+  display: flex;
+  font-family: 'Lato-Semibold';
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 5px;
+  transition: 0.3s;
+  &:hover{
+    transition: 0.3s;
+  }
+  &-blue{
+    background-color: $blue;
+    border: 1px solid $white;
+    color: $white;
+    &:hover{
+      background-color: $white;
+      border: 1px solid $main-color;
+      color: $main-color;
+    }
+  }
+  &-white{
+    background-color: $white;
+    border: 1px solid $main-color;
+    color: $main-color;
+    &:hover{
+      background-color: $blue;
+      border: 1px solid $white;
+      color: $white;
+    }
+  }
+  &-intro{
+    width: 137px;
+    height: 42px;
+    @media screen and (min-width: $tablet1) {
+      width: 180px;
+    }
+    &:first-child{
+      margin-right: 15px;
+      @media screen and (min-width: $tablet1) {
+        margin-right: 30px;
+      }
+    }
+  }
+  &-order{
+    height: 48px;
+    width: 100%;
+    font-size: 15px;
+    cursor: pointer;
+    @media screen and (min-width: $tablet2) {
+      width: calc(33.33% - 14px);
+      margin: 0 auto;
+    }
+  };
+}

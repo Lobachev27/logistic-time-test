@@ -1,0 +1,32 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.title{
+  font-family: 'Lato-Bold';
+  text-transform: uppercase;
+  line-height: 1.4em;
+  & span{
+    color: $blue;
+  }
+  &-intro{
+    color: $main-color;
+    font-size: 7vw;
+    @media screen and (min-width: $tablet1) {
+      font-size: 40px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 48px;
+    }
+  }
+  &-order{
+    font-family: 'Lato-Heavy';
+    font-size: 24px;
+    text-align: center;
+    @media screen and (min-width: $tablet1) {
+      font-size: 28px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 36px;
+    }
+  }
+}

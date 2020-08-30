@@ -1,0 +1,128 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(39,39,51,0.9);
+  z-index: 10;
+  & .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+  &__logo{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: 0.5s;
+    @media screen and (min-width: $tablet1) {
+      font-size: 24px;
+    }
+    @media screen and (min-width: $tablet2) {
+      font-size: 28px;
+    }
+    &:hover{
+      transition: 0.5s;
+      transform: scale(0.9);
+    }
+    & span{
+      color: $blue;
+    }
+  }
+  &__nav{
+    display: none;
+    @media screen and (min-width: $tablet1) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 370px;
+    }
+    @media screen and (min-width: $tablet2) {
+      width: 440px;
+    }
+  }
+  &__link{
+    font-family: 'Lato-Semibold';
+    font-size: 13px;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    &:hover,
+    &.active{
+      color: $blue;
+      transition: 0.3s;
+    }
+  }
+  &__hamburger{
+    display: block;
+    background: url("../img/burger-menu.svg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 20px;
+    height: 16px;
+    justify-self: flex-end;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s;
+    @media screen and (min-width: $tablet1) {
+      display: none;
+    }
+    &.active{
+      background: url("../img/cross.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+  &-mobile{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 100px);
+    top: 100px;
+    background-color: rgba(39,39,51,0.9);
+    z-index: 10;
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+    visibility: hidden;
+    @media screen and (min-width: $tablet1) {
+      display: none;
+    }
+    &.active{
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: 0.7s;
+    }
+    & .container{
+      position: relative;
+      height: 100%;
+    }
+    &__nav{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding-bottom: 50px;
+    }
+    &__link{
+      font-family: 'Lato-Semibold';
+      font-size: 18px;
+      line-height: 1.4em;
+      text-transform: uppercase;
+      margin: 15px 0;
+      &:hover{
+        color: $blue;
+        transition: 0.3s;
+      }
+    }
+  }
+}

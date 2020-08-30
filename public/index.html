@@ -16,7 +16,133 @@
 </head>
 
 <body>
-
+<header class="header">
+  <div class="container">
+    <a class="header__logo" href="javascript:void(0);">Loremipsum.<span>net</span></a>
+    <nav class="header__nav">
+      <a class="header__link active" href="javascript:void(0);">Бизнес</a>
+      <a class="header__link" href="javascript:void(0);">О нас</a>
+      <a class="header__link" href="javascript:void(0);">Цены</a>
+      <a class="header__link" href="javascript:void(0);">Оформить заказ</a>
+    </nav>
+    <div class="header__hamburger"></div>
+  </div>
+</header>
+<div class="header-mobile">
+  <div class="container">
+    <nav class="header-mobile__nav">
+      <a class="header-mobile__link" href="javascript:void(0);">Бизнес</a>
+      <a class="header-mobile__link" href="javascript:void(0);">О нас</a>
+      <a class="header-mobile__link" href="javascript:void(0);">Цены</a>
+      <a class="header-mobile__link" href="javascript:void(0);">Оформить заказ</a>
+    </nav>
+  </div>
+</div>
+<main class="main">
+  <section class="intro">
+    <div class="container">
+      <div class="intro__wrapper">
+        <h1 class="title title-intro"><span>Lorem ipsum</span> dolor sit amet consectetur <span>adipiscing</span></h1>
+        <div class="intro__description">At vero eos et accusamus et iusto odio dignissimos ducimus!</div>
+        <ul class="intro__list">
+          <li class="intro__item">- Totam rem aperiam eaque ipsa</li>
+          <li class="intro__item">- Sit voluptatem accusantium doloremque laudantium</li>
+          <li class="intro__item">- Sed ut perspiciatis, unde omnis iste natus error</li>
+        </ul>
+        <div class="intro__buttons">
+          <a class="btn btn-blue btn-intro" href="javascript:void(0);">Заказать</a>
+          <a class="btn btn-white btn-intro" href="javascript:void(0);">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="order">
+    <div class="container">
+      <h2 class="title title-order">Оформление <span>заказа</span></h2>
+      <div class="order__description">Перед заполнением формы ознакомьтесь с нашей схемой работы!</div>
+      <ul class="order__list">
+        <li class="order__item">
+          <div class="order__icon one"></div>
+          <div class="order__caption">Lorem ipsum dolor sit amet</div>
+        </li>
+        <li class="order__item">
+          <div class="order__icon two"></div>
+          <div class="order__caption">Сonsecteturadipiscing elit</div>
+        </li>
+        <li class="order__item">
+          <div class="order__icon three"></div>
+          <div class="order__caption">Sed do eiusmod tempor</div>
+        </li>
+        <li class="order__item">
+          <div class="order__icon four"></div>
+          <div class="order__caption">Esse cillum dolore eu fugiat</div>
+        </li>
+        <li class="order__item">
+          <div class="order__icon five"></div>
+          <div class="order__caption">Excepteur sint occaecat cupidatat non proident</div>
+        </li>
+      </ul>
+      <form id="orderForm" class="order__form">
+        <div class="row">
+          <div class="order__form-item">
+            <select name="select">
+              <option value="hide">Выберите тип системы</option>
+              <option value="Sed ut perspiciatis">Sed ut perspiciatis</option>
+              <option value="Nemo enim ipsam">Nemo enim ipsam</option>
+              <option value="Et harum quidem">Et harum quidem</option>
+              <option value="Temporibus autem">Temporibus autem</option>
+              <option value="Itaque earum rerum">Itaque earum rerum</option>
+              <option value="Sed ut perspiciatis2">Sed ut perspiciatis</option>
+              <option value="Nemo enim ipsam2">Nemo enim ipsam</option>
+              <option value="Et harum quidem2">Et harum quidem</option>
+              <option value="Temporibus autem2">Temporibus autem</option>
+              <option value="Itaque earum rerum2">Itaque earum rerum</option>
+            </select>
+          </div>
+          <div class="order__form-item">
+            <input class="order__input" name="email" type="email" autocomplete="off" placeholder="Ваш e-mail" required>
+          </div>
+          <div class="order__form-item">
+            <input class="order__input" name="name" type="text" autocomplete="off" placeholder="Ваше имя" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="order__form-range">
+            <div class="order__form-range-text">
+              <label for="amount">Sed ut perspiciatis, unde omnis iste natus</label>
+              <input type="text" id="amount" readonly value="75%">
+            </div>
+            <div id="slider-range-min"></div>
+          </div>
+          <div class="order__form-item">
+            <div class="file-upload">
+              <span>Прикрепить файл</span>
+              <input type="file" name="FileAttachment" id="FileAttachment" class="upload"/>
+            </div>
+            <input type="text" id="fileuploadurl" readonly placeholder="файл не выбран">
+          </div>
+        </div>
+        <button class="btn btn-blue btn-order" type="submit">Отправить</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__copyright">© 2018 <span>«LoremIpsum.net»</span> Все права защищены.</div>
+    <span>|</span>
+    <div class="footer__nav">
+      <a class="footer__link qiwi" href="javascript:void(0);">Qiwi wallet</a>
+      <a class="footer__link yandex" href="javascript:void(0);">Yandex Money</a>
+      <a class="footer__link web" href="javascript:void(0);">Web Money</a>
+    </div>
+    <span>|</span>
+    <div class="footer__social">
+      <a class="footer__link email" href="mailto:info@ipsum228.com">info@ipsum228.com</a>
+      <a class="footer__link vk" href="javascript:void(0);">Мы вконтакте</a>
+    </div>
+  </div>
+</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="./js/script.js"></script>

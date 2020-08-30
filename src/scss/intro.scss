@@ -1,0 +1,90 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.intro{
+  position: relative;
+  background: url("../img/intro.jpg") no-repeat;
+  background-position: 80% top;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  @media screen and (min-width: $tablet1) {
+    height: 600px;
+    background-position: 70% top;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 850px;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.1);
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+  & .container{
+    height: 100%;
+    padding-top: 100px;
+  }
+  &__wrapper{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+    @media screen and (min-width: $desktop) {
+      max-width: 750px;
+    }
+  }
+  &__description{
+    font-family: 'Lato-Bold';
+    color: $main-color;
+    font-size: 4.5vw;
+    line-height: 1.4em;
+    margin-top: 20px;
+    @media screen and (min-width: $tablet1) {
+      font-size: 18px;
+      line-height: 1.6em;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 20px;
+      margin-top: 60px;
+      line-height: 2em;
+    }
+  }
+  &__item{
+    font-size: 4.5vw;
+    color: $main-color;
+    line-height: 1.4em;
+    @media screen and (min-width: $tablet1) {
+      font-size: 18px;
+      line-height: 1.6em;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 20px;
+      line-height: 2em;
+    }
+  }
+  &__list{
+    list-style: none;
+  }
+  &__buttons{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @media screen and (min-width: $tablet1) {
+      margin-top: 40px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-top: 80px;
+    }
+  }
+}

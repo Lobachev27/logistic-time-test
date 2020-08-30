@@ -1,0 +1,457 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.order{
+  position: relative;
+  padding: 60px 0 80px;
+  overflow: hidden;
+  @media screen and (min-width: $tablet1) {
+    padding: 80px 0 100px;
+  }
+  @media screen and (min-width: $tablet2) {
+    padding: 100px 0 120px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 120px 0 150px;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../img/map.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: none;
+    @media screen and (min-width: $tablet1) {
+      display: block;
+    }
+  }
+  &__description{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+    line-height: 1.4em;
+    opacity: 0.8;
+    @media screen and (min-width: $tablet1) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+    }
+  }
+  &__list{
+    list-style: none;
+    margin: 40px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: $tablet1) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 70px 0;
+    }
+  }
+  &__item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+    @media screen and (min-width: $tablet1) {
+      width: 33.33%;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 20%;
+      margin-bottom: 0 !important;
+    }
+    &:last-child{
+      margin-bottom: 0;
+      @media screen and (min-width: $tablet1) {
+        margin-bottom: 25px;
+      }
+      & .order__icon{
+        &:after{
+          display: none!important;
+        }
+      }
+    }
+  }
+  &__icon{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: $blue;
+    border: 5px solid $blue-dark;
+    border-radius: 50%;
+    &:before{
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:after{
+      content: "";
+      display: none;
+      position: absolute;
+      width: 100px;
+      height: 6px;
+      top: 50%;
+      right: -73px;
+      transform: translate(50%, -50%);
+      background: url("../img/ellipse.png") no-repeat;
+      background-position: center;
+      background-size: contain;
+      @media screen and (min-width: $desktop) {
+        display: block;
+      }
+    }
+    &.one{
+      &:before{
+        background: url("../img/icon-search.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &.two{
+      &:before{
+        background: url("../img/icon-percent.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &.three{
+      &:before{
+        background: url("../img/icon-add.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &.four{
+      &:before{
+        background: url("../img/icon-email.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &.five{
+      &:before{
+        background: url("../img/icon-money.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+  &__caption{
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.4em;
+    margin-top: 15px;
+    @media screen and (min-width: $tablet1) {
+      min-height: 38px;
+    }
+    @media screen and (min-width: $desktop) {
+      max-width: 190px;
+      font-size: 16px;
+    }
+  }
+  & .row{
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $tablet2) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+  &__form-item{
+    margin-bottom: 25px;
+    @media screen and (min-width: $tablet2) {
+      width: calc(33.33% - 14px);
+      margin-bottom: 30px;
+    }
+  }
+  &__input{
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: $main-color;
+    border: none;
+    border-radius: 5px;
+    background-color: $white;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+    }
+    &:focus{
+      color: $white;
+      background-color: $footer-color;
+      transition: 0.3s;
+      &::placeholder{
+        color: $white;
+      }
+    }
+    &::placeholder{
+      color: $main-color;
+      opacity: 0.8;
+    }
+  }
+  & .select-hidden {
+    display: none;
+    visibility: hidden;
+    padding-right: 10px;
+  }
+  & .select {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    color: $main-color;
+    width: 100%;
+    height: 48px;
+    user-select: none;
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+    }
+  }
+  & .select-styled {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: $main-color;
+    background-color: $white;
+    padding: 10px 25px 10px 15px;
+    transition: all 0.2s ease-in;
+    &:after {
+      content:"";
+      background: url("../img/angle.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 8px;
+      height: 15px;
+      position: absolute;
+      transform: translate(-50%, -50%) rotate(90deg);
+      top: 50%;
+      right: 10px;
+      transition: 0.5s;
+    }
+    &:active, &.active {
+      color: $white;
+      background-color: $footer-color;
+      border-radius: 5px 5px 0 0;
+      &:after {
+        background: url("../img/angle-white.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        transform: translate(-50%, -50%) rotate(270deg);
+        transition: 0.5s;
+      }
+    }
+  }
+
+  & .select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    max-height: 240px;
+    list-style: none;
+    background-color: rgba(39,39,51,0.95);
+    border: 1px solid $footer-color;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 30px 20px rgba(0, 0, 0, 0.25);
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      height: 4px;
+      width: 6px;
+      cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 4px $footer-color;
+      background-color: $footer-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $blue;
+      border-radius: 6px;
+      outline: none;
+      background-clip: border-box;
+      cursor: pointer;
+    }
+    & li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: $white;
+      margin: 0;
+      height: 48px;
+      padding: 10px 15px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      transition: all 0.15s ease-in;
+      &:hover {
+        color: $blue;
+        transition: all 0.15s ease-in;
+      }
+      &[rel="hide"] {
+        display: none;
+      }
+    }
+  }
+  &__form-range{
+    margin-bottom: 25px;
+    @media screen and (min-width: $tablet1) {
+      margin-bottom: 35px;
+    }
+    @media screen and (min-width: $tablet2) {
+      width: calc(67.67% - 16px);
+    }
+    &-text{
+      display: flex;
+      font-size: 16px;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      @media screen and (min-width: $tablet1) {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 25px;
+      }
+      @media screen and (min-width: $tablet2) {
+        margin-bottom: 22px;
+      }
+    }
+    & label{
+      font-family: 'Lato-Semibold';
+      text-align: center;
+      margin-bottom: 10px;
+      @media screen and (min-width: $tablet1) {
+        margin-bottom: 0;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: 17px;
+      }
+    }
+    & input{
+      font-family: 'Lato-Semibold';
+      font-size: 18px;
+      background-color: transparent;
+      border: none;
+      color: $white;
+      width: 50px;
+      outline: none;
+      text-align: center;
+      @media screen and (min-width: $tablet2) {
+        text-align: right;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: 19px;
+      }
+    }
+    & #slider-range-min{
+      background-color: #bfbfc2;
+      border: 1px solid $white;
+      height: 6px;
+      border-radius: 6px;
+    }
+    & .ui-slider-handle{
+      height: 24px;
+      width: 24px;
+      top: -9px;
+      border-radius: 50%;
+      background-color: $blue;
+      border: 3px solid $blue-dark;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+  & .file-upload {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    background: $white;
+    font-size: 14px;
+    box-shadow: none;
+    color: $main-color;
+    border: 1px solid $blue;
+    text-shadow:none;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    &:hover{
+      cursor: pointer;
+    }
+    & span{
+      position: relative;
+      padding-left: 23px;
+      &:before{
+        content: "";
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: url("../img/icon-file.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+  & .file-upload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  & #fileuploadurl{
+    display: flex;
+    border: none;
+    background: none;
+    box-shadow: none;
+    font-size: 13px;
+    color: $white;
+    opacity: 0.8;
+    width: 100%;
+    outline: none;
+    margin-top: 10px;
+    @media screen and (min-width: $tablet2) {
+      text-align: right;
+      margin-top: 12px;
+    }
+    &::placeholder{
+      color: $white;
+    }
+  }
+}
